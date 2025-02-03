@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+   
+body{
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* kutu genişlikleri */
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%; }
+.col-4{width: 33.33%; }
+.col-5{width: 41.66%; }
+.col-6{width: 50%;}
+.col-7{width: 58.33%; }
+.col-8{width: 66.66%;}
+.col-9{width: 75%; }
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%; }
+.col-12{width: 100%;}
+
+/* satırlar */
+.row{
+    border:black solid 2px;
+    background-color:black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+/* satırları yan yana gelmesin */
+.row::after{
+content: "";
+clear: both;
+display: table;
+}
+
+/* "col-" yasla*/
+[class*="col-"]{
+padding: 15px;
+border: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    [class*="col-"] {
+        width: 100%;
+    }
+   
+}
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#left-side {
+    flex: 0 0 300px; /* Sabit genişlik: 300px */
+    width: 500px; /* Alternatif olarak */
+    
+}
+
+
+#right-side {
+    flex: 1; /* Kalan alanı kaplasın */
+}
+
+
+.profile-img{
+    border-style: solid;
+    border-color: black;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+}
+
+.profile h1{
+    color: rgb(151, 146, 146);
+}
+
+/* İkon Stili */
+.buttons{
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 200px;
+
+    background-color: black; /* Buton Rengi */
+    color: rgba(255, 255, 255, 0.877);
+
+    border-style: solid;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Buton Hover Efekti */
+.buttons:hover {
+    background-color: #0e0e0e; /* Hover Rengi */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+ }
+
+.btn{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li{
+    background-color: rgb(127, 205, 127);
+    border-radius: 25px;
+    margin: 10px ;
+    text-align: center;
+    padding: 8px;
+    min-width: 80px;
+    font-weight:bolder;
+    color: rgb(26, 87, 26);
+    display: inline-block; 
+    transition: background-color 0.3s ease;
+}
+
+.skills-category1 ul li{
+    color: rgb(255, 230, 0);
+    background-color:rgb(197, 197, 109); 
+}
+.skills-category2 ul li{
+    color: rgb(219, 80, 45);
+    background-color: rgb(223, 137, 111);
+
+}
+.skills-category3 ul li{
+    color: rgb(20, 56, 237);
+    background-color: rgb(76, 137, 187);
+}
+
+
+.img2{
+    border-style: solid;
+    border-color: black;
+    border-radius: 50%;
+    /* margin-bottom: 10px;*/
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin: 7px;
+    
+}
+
+.edu h3{
+    margin: 10px;
+    padding:5px;
+}
+.edu p{
+    color: rgb(230, 225, 225);
+    margin: 10px;
+    padding:5px;
+}
+
+    
+/* Projeler Bölümü */
+.projects, .projects1,.edu {
+
+border-left: orange;
+border-left-style: solid;
+border-left-width: 2px;
+
+border-radius: 12px;
+box-shadow: 0 4px 8px rgb(49, 49, 49);
+max-width: 900px;
+margin-top: 15px;
+display: flex;
+flex-direction: column;
+/*margin: 10px auto;
+padding: 5px;*/
+
+
+}
+
+
+.projects .p-img, .projects1 .p-img {
+    max-width: 60%; /* Resmin yatay boyutunu sınırla */
+    max-height: 200px; /* Resmin dikey boyutunu sınırla */
+    width: auto; /* Genişliği orantılı ayarla */
+    height: auto; /* Yüksekliği orantılı ayarla */
+    display: block; /* Blok düzeyinde davranış sağlar */
+    margin: 0 auto; /* Resmi tam ortalar */
+    object-fit: contain; /* Resmin kesilmeden sığmasını sağlar */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    box-shadow: 0px 4px 8px rgba(50, 50, 50, 0.2); /* Hafif bir gölge ekle */
+    margin-top: 5px;
+}
+
+
+.projects h3,.projects1 h3{
+    margin: 10px;
+    padding:5px;
+
+}
+
+.projects p,.projects1 p{
+    color: rgb(203, 199, 199);
+    margin: 10px;
+    padding:5px;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    margin: 8px;
+    width: 140px;
+    border-style: solid;
+    border-color: rgb(89, 88, 88);
+    color: rgb(235, 232, 232);
+    text-decoration: none;
+    /*font-size: 1rem;*/
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    
+
+}
+.view-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.view-btn:hover {
+    color: #8b8989;
+}
+
+/* Büyük ekranlarda uygulanacak düzen */
+@media screen and (min-width: 769px) {
+  #container {
+    display: flex;
+  
+  }
+  
+  #left-side {
+    position: sticky;
+    top: 0;              /* Sol tarafın ekranın üst kısmına yapışması */
+    flex: 0 0 400px;     /* Sabit genişlik */
+    width: 400px;       
+    height: 100vh;      /*  Tam ekran yüksekliği */
+    overflow-y: auto;    /* İçerik taşarsa kaydırma ekler */
+    margin-top: 10px;
+  }
+  
+  #right-side {
+    flex: 1;             /* Kalan alanı kaplar */
+    overflow-y: auto;    /* İçeriğin taşması durumunda kaydırılabilir */
+    margin-left: 20px;  
+  }
+}
